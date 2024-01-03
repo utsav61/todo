@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Task</title>
+    <style>
+        th,
+        td {
+            padding: 5px 10px;
+
+        }
+
+        table {
+            width: auto;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        h1,
+        .a {
+            text-align: center;
+        }
+
+        .a {
+            text-decoration: none;
+            color: white;
+            background-color: green;
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block;
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            /* display: block; */
+            margin-bottom: 4px;
+        }
+
+        input {
+            /* width: 100%; */
+            padding: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Running Task </h1>
+    <table border="1">
+        <th>Id</th>
+        <th>Item</th>
+        <th>Status</th>
+
+        <% result.forEach(function(tbl){%>
+            <tr>
+                <td>
+                    <%=tbl.id%>
+                </td>
+                <td>
+                    <%=tbl.item%>
+                </td>
+                <td>
+                    <%=tbl.status%>
+                </td>
+            </tr>
+            <%})%>
+    </table>
+    <a href="/" class="button a">Back To Home Page</a>
+</body>
+
+</html>

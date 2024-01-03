@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        th,
+        td {
+            padding: 5px 10px;
+
+        }
+
+        table {
+            width: auto;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        h1,
+        .a {
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .a {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(5, 5, 124);
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block;
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            /* display: block; */
+            margin-bottom: 4px;
+        }
+
+        input {
+            /* width: 100%; */
+            padding: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: rgb(2, 2, 92);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #dedede;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ToDo List</h1>
+
+    <form action="/" method="post">
+        <label for="item">Item Name :&nbsp;&nbsp; </label>
+        <input type="text" id="item" name="item" required>
+
+
+
+        <input type="submit" value="Add" name="add">
+    </form>
+    <a href="/viewall" class="button a">View All</a>
+    <a href="/decline" class="button a">Decline Task</a>
+    <a href="/completetask" class="button a">Complete Task</a>
+    <a href="/runningtask" class="button a">Running Task</a>
+    <a href="/pendingtask" class="button a">Pending Task</a>
+
+    <table border="1">
+        <th>Id</th>
+        <th>Item</th>
+        <th>Status</th>        
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Running Task</th>
+        <th>Pending Task</th>
+        <th>Complete Task</th>
+        <th>Decline Task</th>
+
+        <% result.forEach(function(tbl){%>
+            <tr>
+                <td>
+                    <%=tbl.id%>
+                </td>
+                <td>
+                    <%=tbl.item%>
+                </td>
+                <td><%=tbl.status%></td>
+                <td><a href="/delete/<%=tbl.id%>">Delete</a></td>
+                <td><a href="/update/<%=tbl.id%>">Update</a></td>
+                <td><a href="/runtask/<%=tbl.id%>">Running Task</a></td>
+                <td><a href="/pentask/<%=tbl.id%>">Pending Task</a></td>
+                <td><a href="/comtask/<%=tbl.id%>">Complete Task</a></td>
+                <td><a href="/decline/<%=tbl.id%>">Decline Task</a></td>
+            </tr>
+            <%})%>
+    </table>
+</body>
+
+
+</html>

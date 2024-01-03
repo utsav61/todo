@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Todo</title>
+    <style>
+        th,
+        td {
+            padding: 5px 10px;
+
+        }
+
+        table {
+            width: auto;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        h1,
+        .a {
+            text-align: center;
+        }
+
+        .a {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(0, 26, 128);
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block;
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            /* display: block; */
+            margin-bottom: 4px;
+        }
+
+        input {
+            /* width: 100%; */
+            padding: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: rgb(0, 26, 128);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* .button:hover {
+            background-color: #45a049;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <% result.forEach(function(tbl){%>
+        <form action="/up/<%=tbl.id%>" method="post">
+            <label for="item">Item Name :&nbsp;&nbsp; </label>
+            <input type="text" value="<%=tbl.item%>" id="item" name="item" required>
+
+
+
+            <input type="submit" value="Edit" name="add">
+        </form>
+        <%})%>
+
+</body>
+
+</html>
